@@ -10,7 +10,8 @@ export const checkIsValidHexColor = (color: string): boolean => {
 }
 
 export const checkIsUsernameValid = (username: string): boolean => {
-  return /^[a-zA-Z0-9_]{1,31}$/.test(username) // 1 to 31 inclusive
+  // 1-31 chars, cannot start with space
+  return /^[a-zA-Z0-9_][a-zA-Z0-9_\s]{0,30}$/.test(username)
 }
 
 export const externalLinkClickHandler = (root: HTMLButtonElement, url: string): void => {
