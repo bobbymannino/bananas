@@ -12,6 +12,7 @@
   let isIceServersValid = true
   let modalSuccessIsActive = false
   let modalFailureIsActive = false
+  let appVersion = ''
 
   $: colorValue, checkColor()
   $: usernameValue, checkUsername()
@@ -73,6 +74,10 @@
     usernameValue = settings.username
     colorValue = settings.color
     iceServersValue = settings.iceServers.map((srv) => JSON.stringify(srv)).join('\n')
+
+    window.BananasApi.getAppVersion().then((_appVersion) => {
+      appVersion = _appVersion
+    })
   })
 </script>
 
@@ -172,6 +177,10 @@
     </span>
     <strong>See the code</strong>
   </button>
+
+  <hr />
+
+  <h4>v{appVersion}</h4>
 </div>
 
 <style>

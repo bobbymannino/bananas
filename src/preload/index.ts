@@ -58,6 +58,9 @@ const BananasApi = {
     y: number
   }): Promise<void> => {
     ipcRenderer.invoke('updateRemoteCursor', state)
+  },
+  getAppVersion: async (): Promise<string> => {
+    return await ipcRenderer.invoke('getAppVersion')
   }
 }
 
