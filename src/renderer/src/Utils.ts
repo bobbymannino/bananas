@@ -6,7 +6,8 @@ export const enum ConnectionType {
 export type RTCSessionDescriptionOptions = RTCSessionDescriptionInit
 
 export const checkIsValidHexColor = (color: string): boolean => {
-  return /^#[0-9A-F]{6}$/i.test(color)
+  // 3 or 6 digit hex code
+  return /^#([0-9A-F]{6}|[0-9A-F]{3})$/i.test(color)
 }
 
 export const checkIsUsernameValid = (username: string): boolean => {
