@@ -92,6 +92,10 @@
     <div class="box">
       <h1 class="title has-text-danger">Failure</h1>
       <p>Settings could not be saved.</p>
+      <hr />
+      {#if !isUsernameValid}<p>Username is invalid.</p>{/if}
+      {#if !isColorValid}<p>Color is invalid.</p>{/if}
+      {#if !isIceServersValid}<p>Servers are invalid.</p>{/if}
     </div>
   </div>
 </div>
